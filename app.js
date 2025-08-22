@@ -15,7 +15,7 @@ function agregarAmigo() {
 function limpiarCaja() {
     document.querySelector('#amigo').value = '';
 }
-console.log(amigos);    
+//console.log(amigos);    
 
 
 function listarAmigos(){
@@ -26,3 +26,14 @@ function listarAmigos(){
     }
 }   
 
+function sortearAmigo(){
+    if(amigos.length == 0){
+        alert("Antes de sortear, ingrese al menos un amigo.");
+    }
+    else{
+        let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+        let amigoSecreto = amigos[indiceAleatorio];
+        let muestraAmigo = document.getElementById('resultado');
+        muestraAmigo.innerHTML = `<h1>${amigoSecreto}</h1>`;
+    }
+}
